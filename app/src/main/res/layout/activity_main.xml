@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/amarillo_fondo">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation">
+
+        <ScrollView
+            android:id="@+id/layoutReporte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nueva Denuncia"
+                    android:textColor="@color/guinda_gubernamental"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rellena la siguiente informacion."
+                    android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="25dp"/>
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="Nombre completo"
+                    android:background="@drawable/edittext_border"
+                    android:paddingHorizontal="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:inputType="textPersonName"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="15dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/edittext_border"
+                        android:padding="5dp"
+                        android:layout_marginEnd="10dp">
+                        <Spinner
+                            android:id="@+id/spinnerColonia"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etDireccion"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:hint="Calle y número"
+                        android:background="@drawable/edittext_border"
+                        android:paddingHorizontal="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="15dp">
+
+                    <EditText
+                        android:id="@+id/etCelular"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:hint="Teléfono celular"
+                        android:background="@drawable/edittext_border"
+                        android:paddingHorizontal="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:inputType="phone" />
+
+                    <EditText
+                        android:id="@+id/etCorreo"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:hint="Correo electrónico"
+                        android:background="@drawable/edittext_border"
+                        android:paddingHorizontal="15dp"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/edittext_border"
+                    android:padding="5dp"
+                    android:layout_marginBottom="15dp">
+                    <Spinner
+                        android:id="@+id/spinnerTipoReporte"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Detalles del reporte..."
+                    android:background="@drawable/edittext_border"
+                    android:padding="15dp"
+                    android:gravity="top"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="textMultiLine" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/blanco"
+                    android:layout_marginBottom="25dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center">
+                        <Button
+                            android:id="@+id/btnSeleccionarImagen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Seleccionar fotografia"
+                            android:backgroundTint="@color/guinda_gubernamental"
+                            android:textColor="@color/blanco"
+                            android:layout_marginBottom="15dp"/>
+                        <ImageView
+                            android:id="@+id/imagen"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/imagen" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btnEnviarReporte"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="ENVIAR REPORTE"
+                    android:backgroundTint="@color/amarillo_principal"
+                    android:textColor="@color/guinda_oscuro"
+                    android:textStyle="bold"
+                    app:cornerRadius="15dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/layoutContacto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Centro de Atención"
+                android:textColor="@color/guinda_gubernamental"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                android:textAlignment="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ubicación" android:textStyle="bold" android:textColor="@color/guinda_gubernamental"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Guyamas Sonora Mexico" android:layout_marginBottom="10dp"/>
+                    <Button android:id="@+id/btnMapa" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ver en Google Maps" android:backgroundTint="@color/guinda_gubernamental" android:textColor="@color/blanco"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Correo Electrónico" android:textStyle="bold" android:textColor="@color/guinda_gubernamental"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="atencionciudadana@guaymas.gob.mx" android:layout_marginBottom="10dp"/>
+                    <Button android:id="@+id/btnCorreo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enviar un mensaje" android:backgroundTint="@color/guinda_gubernamental" android:textColor="@color/blanco"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Línea Telefónica" android:textStyle="bold" android:textColor="@color/guinda_gubernamental"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="622 169 41 55" android:layout_marginBottom="10dp"/>
+                    <Button android:id="@+id/btnLlamar" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Llamar ahora" android:backgroundTint="@color/guinda_gubernamental" android:textColor="@color/blanco"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutExito"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="30dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Reporte Enviado!"
+                android:textColor="@color/guinda_gubernamental"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tu reporte se ha enviado correctamente al sistema."
+                android:textColor="@color/gris_oscuro"
+                android:textSize="16sp"
+                android:layout_marginBottom="35dp"
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btnVolverAFormulario"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:text="ENTENDIDO"
+                android:backgroundTint="@color/amarillo_principal"
+                android:textColor="@color/guinda_oscuro"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blanco"
+        app:itemIconTint="@color/guinda_gubernamental"
+        app:itemTextColor="@color/guinda_gubernamental"
+        app:menu="@menu/bottom_menu"
+        app:elevation="16dp"/>
+
+</RelativeLayout>
